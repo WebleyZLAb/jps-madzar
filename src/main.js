@@ -41,3 +41,19 @@ if (prefersReducedMotion) {
     el.classList.add("is-visible");
   });
 }
+
+// Top bar owns the hero; once it scrolls out of view, hand off to the fixed
+// mobile contact bar instead of showing both at once (mobile only via CSS —
+// see .top-bar / .mobile-bar). Not gated on prefers-reduced-motion: this is
+// a functional visibility state, not decorative entrance motion (the CSS
+// transition itself is disabled under reduced motion).
+const hero = document.getElementById("hero");
+if (hero && "IntersectionObserver" in window) {
+  const heroObserver = new IntersectionObserver(
+    ([entry]) => {
+      document.body.classList.toggle("past-hero", !entry.isIntersecting);
+    },
+    { threshold: 0, rootMargin: "-1px 0px 0px 0px" }
+  );
+  heroObserver.observe(hero);
+}
