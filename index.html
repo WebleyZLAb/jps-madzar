@@ -52,6 +52,13 @@
         "description": "Profesionalni vozač za domaće transportne relacije u Bosni i Hercegovini. Direktan dogovor, bez posrednika.",
         "telephone": "+38766122171",
         "email": "banemadzar81@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rudi Čajaveca 8",
+          "postalCode": "79000",
+          "addressLocality": "Prijedor",
+          "addressCountry": "BA"
+        },
         "areaServed": {
           "@type": "Country",
           "name": "Bosna i Hercegovina"
@@ -72,9 +79,9 @@
       rectangular geometry, hairline rules, no cards/glass/gradients.
       STORY: visitor sees a real driver, one direct number, and reads the
       page as one continuous route from hero to final CTA.
-      FIRST VIEWPORT: full-bleed dark hero, authored road-to-horizon line
-      art standing in for a real photo (marked below), condensed headline,
-      one amber primary CTA + trust line.
+      FIRST VIEWPORT: full-bleed dark hero, client-supplied night photo of
+      the truck (desktop/mobile crops), condensed headline, one amber
+      primary CTA + trust line.
       FORM: putna signalizacija / trasa puta (road signage & route system).
       FINISH: unreviewed and undocumented is unfinished; this build ends
       with the finish review, the verdict, DESIGN.md, and every shipping
@@ -109,39 +116,23 @@
     <main id="sadrzaj">
       <section id="hero" class="hero">
         <div class="hero__art" aria-hidden="true">
-          <!--
-            Autorska SVG ilustracija ceste kao PRIVREMENO hero rješenje —
-            zamijeniti pravom fotografijom čim bude dostupna: vozač pored
-            kamiona, ili kamion na otvorenoj cesti, kadar sa dovoljno
-            kontrasta za tekst preko tamnog overlay-a (vidi .hero__scrim).
-          -->
-          <svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Ilustracija ceste koja se pruža ka horizontu u noći — mjesto predviđeno za fotografiju vozača ili kamiona">
-            <defs>
-              <radialGradient id="glow" cx="50%" cy="34%" r="55%">
-                <stop offset="0%" stop-color="#3a2a12" stop-opacity="0.9" />
-                <stop offset="45%" stop-color="#1c1810" stop-opacity="0.4" />
-                <stop offset="100%" stop-color="#121417" stop-opacity="0" />
-              </radialGradient>
-              <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#121417" />
-                <stop offset="100%" stop-color="#0b0c0e" />
-              </linearGradient>
-            </defs>
-            <rect width="1600" height="1000" fill="url(#fade)" />
-            <ellipse cx="800" cy="340" rx="620" ry="320" fill="url(#glow)" />
-            <path d="M120 1000 L740 330 L860 330 L1480 1000 Z" fill="#181b20" opacity="0.9" />
-            <path d="M180 1000 L748 332" fill="none" stroke="#3a3f47" stroke-width="4" />
-            <path d="M1420 1000 L852 332" fill="none" stroke="#3a3f47" stroke-width="4" />
-            <path class="hero-art__spine" d="M800 340 L800 1000" fill="none" stroke="#e2842a" stroke-width="6" stroke-dasharray="26 22" opacity="0.75" />
-            <g stroke="#2a2e35" stroke-width="3" opacity="0.8">
-              <path d="M330 900 L400 900" />
-              <path d="M420 760 L475 760" />
-              <path d="M500 650 L545 650" />
-              <path d="M1270 900 L1200 900" />
-              <path d="M1180 760 L1125 760" />
-              <path d="M1100 650 L1055 650" />
-            </g>
-          </svg>
+          <!-- Klijentove fotografije (desktop i mobile verzija) — zamjenjuju
+               raniji autorski SVG placeholder. -->
+          <picture>
+            <source media="(min-width: 720px)" srcset="/hero-desktop.webp" type="image/webp" />
+            <source media="(min-width: 720px)" srcset="/hero-desktop.jpg" type="image/jpeg" />
+            <source srcset="/hero-mobile.webp" type="image/webp" />
+            <img
+              class="hero__art-img"
+              src="/hero-mobile.jpg"
+              width="941"
+              height="1672"
+              alt=""
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
         </div>
         <div class="hero__grain" aria-hidden="true"></div>
         <div class="hero__scrim" aria-hidden="true"></div>
@@ -284,25 +275,34 @@
           <div class="relations__map" data-reveal>
             <!--
               Prava mapa (Google Maps embed, centrirana na BiH) sa
-              autorskom simuliranom linijom rute preko nje (Prijedor →
-              Sarajevo, primjer domaće relacije — ilustrativna linija,
-              ne Google-om izračunata ruta, da bi se izbjegao Google-ov
-              info-panel iz directions embed-a). Stranica i dalje javno
-              prikazuje samo "Bosna i Hercegovina".
+              autorskom simuliranom linijom rute preko nje, iscrtanom kroz
+              stvarne gradove na koridoru Prijedor–Travnik–Zenica–Visoko–
+              Sarajevo (primjer domaće relacije — ilustrativna linija, ne
+              Google-om izračunata ruta). Stranica i dalje javno prikazuje
+              samo "Bosna i Hercegovina".
+
+              .relations__map-scaled je uvećan i pomjeren (isti transform
+              za iframe i SVG zajedno, pa ostaju poravnati) da bi Google-ov
+              "Open in Maps" chip — dio je same embed stranice, nema
+              zvaničnog parametra da se sakrije — bio odsječen van vidljive
+              oblasti kontejnera. Koordinate rute su izmjerene iz stvarnog
+              screenshot-a ovog istog embed-a (isti q=/z= parametri).
             -->
-            <div class="relations__map-embed">
-              <iframe
-                src="https://maps.google.com/maps?q=Bosna+i+Hercegovina&z=8&output=embed"
-                title="Mapa Bosne i Hercegovine"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                tabindex="-1"
-              ></iframe>
-              <svg class="relations__route" viewBox="0 0 400 300" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M88 90 C 150 130, 190 150, 230 190 S 300 230, 320 220" />
-                <circle cx="88" cy="90" r="6" />
-                <circle cx="320" cy="220" r="7" />
-              </svg>
+            <div class="relations__map-embed" aria-hidden="true">
+              <div class="relations__map-scaled">
+                <iframe
+                  src="https://maps.google.com/maps?q=Bosna+i+Hercegovina&z=8&output=embed"
+                  title=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  tabindex="-1"
+                ></iframe>
+                <svg class="relations__route" viewBox="0 0 400 300" preserveAspectRatio="none">
+                  <path d="M72 90 C80.3 84.2,102.7 58,122 55 C141.3 52,169 68.7,188 72 C207 75.3,220 67,236 75 C252 83,269.3 107.5,284 120 C298.7 132.5,317.3 145,324 150" />
+                  <circle cx="72" cy="90" r="6" />
+                  <circle cx="324" cy="150" r="7" />
+                </svg>
+              </div>
             </div>
             <div class="relations__endpoint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -345,14 +345,18 @@
       <section id="realno-sa-ceste" class="social">
         <div class="container social__grid">
           <div class="social__frame" data-reveal>
-            <div class="social__frame-mark">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="3" y="5" width="18" height="14" rx="1" />
-                <circle cx="12" cy="12" r="3.2" />
-                <path d="M8 5l1.2-2h5.6L16 5" />
-              </svg>
-              <span>Fotografija sa Instagrama — dodati kad bude dostupna</span>
-            </div>
+            <picture>
+              <source srcset="/social-photo.webp" type="image/webp" />
+              <img
+                class="social__photo"
+                src="/social-photo.jpg"
+                width="1086"
+                height="1086"
+                alt="Vozač JPS Madžar pored kamiona"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </div>
           <div>
             <div class="section-head">
@@ -458,15 +462,19 @@
         </picture>
         JPS Madžar
       </a>
-      <p class="site-footer__meta">
+      <!-- <address> grupiše kontakt/adresu u jedan semantički blok (dobra
+           praksa za footer NAP podatke) — vidi i JSON-LD address u <head>. -->
+      <address class="site-footer__meta">
         <span>Profesionalni teretni transport</span>
         <span aria-hidden="true">·</span>
-        <span>Bosna i Hercegovina</span>
+        <span>Rudi Čajaveca 8, 79000 Prijedor, BiH</span>
+        <span aria-hidden="true">·</span>
+        <a href="tel:+38766122171" class="figures">+387 66 122 171</a>
         <span aria-hidden="true">·</span>
         <a class="site-footer__social" href="https://www.instagram.com/jps_madzar?igsi=MXBiNm1zemk2YXI5Ng==" target="_blank" rel="noopener noreferrer">@jps_madzar</a>
         <span aria-hidden="true">·</span>
         <span>&copy; <span id="year"></span> JPS Madžar</span>
-      </p>
+      </address>
     </footer>
 
     <nav class="mobile-bar" aria-label="Brzi kontakt">

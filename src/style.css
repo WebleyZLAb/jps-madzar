@@ -431,17 +431,11 @@ button {
   height: 100%;
 }
 
-.hero__art svg {
+.hero__art-img {
   width: 100%;
   height: 100%;
-}
-
-.hero__grain {
-  position: absolute;
-  inset: 0;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
-  pointer-events: none;
+  object-fit: cover;
+  object-position: center 65%;
 }
 
 .hero__scrim {
@@ -746,7 +740,19 @@ section {
   overflow: hidden;
 }
 
-.relations__map-embed iframe {
+/* Scaled up and shifted so Google's "Open in Maps" chip (top-left, part of
+   the embed page itself — no parameter hides it) lands outside the crop.
+   iframe and SVG live inside this one transformed box so they scale and
+   shift together and stay aligned; their own coordinates are unchanged. */
+.relations__map-scaled {
+  position: absolute;
+  top: -16%;
+  left: -11%;
+  width: 122%;
+  height: 122%;
+}
+
+.relations__map-scaled iframe {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -892,28 +898,12 @@ section {
   overflow: hidden;
 }
 
-.social__frame-mark {
+.social__photo {
   position: absolute;
   inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  padding: 2rem;
-  text-align: center;
-  color: var(--color-ink-faint);
-}
-
-.social__frame-mark svg {
-  width: 2.25rem;
-  height: 2.25rem;
-  color: var(--color-line-strong);
-}
-
-.social__frame-mark span {
-  font-size: 0.78rem;
-  max-width: 20ch;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .social__text {
@@ -1046,6 +1036,7 @@ section {
 }
 
 .site-footer__meta {
+  font-style: normal;
   font-size: 0.85rem;
   color: var(--color-ink-faint);
   display: flex;
@@ -1053,10 +1044,11 @@ section {
   gap: 0.4rem 0.9rem;
 }
 
-.site-footer__social {
+.site-footer__meta a {
   color: var(--color-ink-dim);
 }
 
+.site-footer__meta a:hover,
 .site-footer__social:hover {
   color: var(--color-signal);
 }
