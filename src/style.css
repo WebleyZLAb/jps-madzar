@@ -218,9 +218,24 @@ button {
 [data-reveal-group].is-visible > *:nth-child(4) { transition-delay: 210ms; }
 [data-reveal-group].is-visible > *:nth-child(5) { transition-delay: 280ms; }
 
+/* Kako radim — each waypoint slides into place from the right as it's
+   scrolled to, individually (not a group burst), instead of the site's
+   usual fade + rise. */
+[data-reveal-right] {
+  opacity: 0;
+  transform: translateX(72px);
+  transition: opacity var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out);
+}
+
+[data-reveal-right].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   [data-reveal],
-  [data-reveal-group] > * {
+  [data-reveal-group] > *,
+  [data-reveal-right] {
     transition: none !important;
     transform: none !important;
     opacity: 1 !important;

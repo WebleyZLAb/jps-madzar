@@ -7,8 +7,10 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+const REVEAL_SELECTOR = "[data-reveal], [data-reveal-group], [data-reveal-right]";
+
 if (prefersReducedMotion) {
-  document.querySelectorAll("[data-reveal], [data-reveal-group]").forEach((el) => {
+  document.querySelectorAll(REVEAL_SELECTOR).forEach((el) => {
     el.classList.add("is-visible");
   });
 } else if ("IntersectionObserver" in window) {
@@ -24,13 +26,13 @@ if (prefersReducedMotion) {
     { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
   );
 
-  document.querySelectorAll("[data-reveal], [data-reveal-group]").forEach((el) => {
+  document.querySelectorAll(REVEAL_SELECTOR).forEach((el) => {
     observer.observe(el);
   });
 } else {
   // No IntersectionObserver support: show content immediately rather than
   // leaving it hidden.
-  document.querySelectorAll("[data-reveal], [data-reveal-group]").forEach((el) => {
+  document.querySelectorAll(REVEAL_SELECTOR).forEach((el) => {
     el.classList.add("is-visible");
   });
 }
