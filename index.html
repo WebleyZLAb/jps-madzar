@@ -3,149 +3,441 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>JPS Madžar — Prevoz robe kipom po cijeloj BiH</title>
+    <title>JPS Madžar | Profesionalni transport u BiH</title>
     <meta
       name="description"
-      content="JPS Madžar — prevoz rasutog tereta, iskop i odvoz materijala, dostava građevinskog materijala kipom. 15+ godina iskustva, jedan vozač, bez posrednika. Cijela Bosna i Hercegovina."
+      content="JPS Madžar — profesionalni vozač za domaće transportne relacije. Direktna komunikacija, odgovoran pristup i pouzdan dogovor."
     />
-    <meta name="theme-color" content="#1a1a2e" />
+    <meta name="theme-color" content="#121417" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Nema potvrđenog domena još (Vercel deploy u pripremi — vidi CLAUDE.md §5).
+         Kad domen bude poznat: dodati <link rel="canonical"> i zamijeniti
+         og:url / og:image apsolutnim URL-ovima ispod. -->
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="JPS Madžar" />
+    <meta property="og:title" content="JPS Madžar | Profesionalni transport u BiH" />
+    <meta
+      property="og:description"
+      content="Profesionalni vozač za domaće transportne relacije. Direktna komunikacija, odgovoran pristup i pouzdan dogovor."
+    />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="bs_BA" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="JPS Madžar | Profesionalni transport u BiH" />
+    <meta
+      name="twitter:description"
+      content="Profesionalni vozač za domaće transportne relacije. Direktna komunikacija, odgovoran pristup i pouzdan dogovor."
+    />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@600;700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "JPS Madžar",
+        "description": "Profesionalni vozač za domaće transportne relacije u Bosni i Hercegovini. Direktan dogovor, bez posrednika.",
+        "telephone": "+38766122171",
+        "email": "banemadzar81@gmail.com",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Bosna i Hercegovina"
+        },
+        "sameAs": ["https://www.instagram.com/jps_madzar"]
+      }
+    </script>
   </head>
   <body>
+    <!--
+      DIRECTION CONTRACT (seed 2eae3978 / impeccable's-pick, user-locked over assigned index)
+      THESIS: trust reads like a road sign, not a sales pitch — direct,
+      high-contrast, understood in one glance, refusing the soft
+      corporate-fleet dashboard look.
+      OWN-WORLD: near-black night asphalt ground, one committed matte-amber
+      signal accent in bands (rules, dots, CTAs, route strokes — never neon/
+      glow), Big Shoulders condensed for display, Public Sans for body,
+      rectangular geometry, hairline rules, no cards/glass/gradients.
+      STORY: visitor sees a real driver, one direct number, and reads the
+      page as one continuous route from hero to final CTA.
+      FIRST VIEWPORT: full-bleed dark hero, authored road-to-horizon line
+      art standing in for a real photo (marked below), condensed headline,
+      one amber primary CTA + trust line.
+      FORM: putna signalizacija / trasa puta (road signage & route system).
+      FINISH: unreviewed and undocumented is unfinished; this build ends
+      with the finish review, the verdict, DESIGN.md, and every shipping
+      raster carrying its provenance.
+    -->
     <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
 
-    <header class="top-bar" data-reveal="fade">
-      <a href="#hero" class="top-bar__brand">JPS&nbsp;MADŽAR</a>
-      <a href="tel:+38761000000" class="top-bar__call">
-        <span class="top-bar__call-dot" aria-hidden="true"></span>
+    <header class="top-bar">
+      <a href="#hero" class="top-bar__brand">
+        <span class="top-bar__shield" aria-hidden="true">JM</span>
+        JPS&nbsp;Madžar
+      </a>
+      <a class="top-bar__call" href="tel:+38766122171">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6.6 10.8c1.5 3 3.9 5.4 6.9 6.9l2.3-2.3c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1.1.5 1.1 1.1V21c0 .6-.5 1.1-1.1 1.1C10.7 22.1 1.9 13.3 1.9 2.4 1.9 1.8 2.4 1.3 3 1.3h3.2c.6 0 1.1.5 1.1 1.1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/>
+        </svg>
         Pozovi
       </a>
     </header>
 
     <main id="sadrzaj">
       <section id="hero" class="hero">
-        <div class="hero__pin">
-          <canvas id="hero-canvas" class="hero__canvas" aria-hidden="true"></canvas>
-          <div class="hero__fallback" aria-hidden="true"></div>
-          <div class="hero__scrim" aria-hidden="true"></div>
+        <div class="hero__art" aria-hidden="true">
+          <!--
+            Autorska SVG ilustracija ceste kao PRIVREMENO hero rješenje —
+            zamijeniti pravom fotografijom čim bude dostupna: vozač pored
+            kamiona, ili kamion na otvorenoj cesti, kadar sa dovoljno
+            kontrasta za tekst preko tamnog overlay-a (vidi .hero__scrim).
+          -->
+          <svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Ilustracija ceste koja se pruža ka horizontu u noći — mjesto predviđeno za fotografiju vozača ili kamiona">
+            <defs>
+              <radialGradient id="glow" cx="50%" cy="34%" r="55%">
+                <stop offset="0%" stop-color="#3a2a12" stop-opacity="0.9" />
+                <stop offset="45%" stop-color="#1c1810" stop-opacity="0.4" />
+                <stop offset="100%" stop-color="#121417" stop-opacity="0" />
+              </radialGradient>
+              <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#121417" />
+                <stop offset="100%" stop-color="#0b0c0e" />
+              </linearGradient>
+            </defs>
+            <rect width="1600" height="1000" fill="url(#fade)" />
+            <ellipse cx="800" cy="340" rx="620" ry="320" fill="url(#glow)" />
+            <path d="M120 1000 L740 330 L860 330 L1480 1000 Z" fill="#181b20" opacity="0.9" />
+            <path d="M180 1000 L748 332" fill="none" stroke="#3a3f47" stroke-width="4" />
+            <path d="M1420 1000 L852 332" fill="none" stroke="#3a3f47" stroke-width="4" />
+            <path class="hero-art__spine" d="M800 340 L800 1000" fill="none" stroke="#e2842a" stroke-width="6" stroke-dasharray="26 22" opacity="0.75" />
+            <g stroke="#2a2e35" stroke-width="3" opacity="0.8">
+              <path d="M330 900 L400 900" />
+              <path d="M420 760 L475 760" />
+              <path d="M500 650 L545 650" />
+              <path d="M1270 900 L1200 900" />
+              <path d="M1180 760 L1125 760" />
+              <path d="M1100 650 L1055 650" />
+            </g>
+          </svg>
+        </div>
+        <div class="hero__grain" aria-hidden="true"></div>
+        <div class="hero__scrim" aria-hidden="true"></div>
 
-          <div class="hero__content">
-            <p class="hero__kicker" data-reveal-hero>Prevoz kipom · Bosna i Hercegovina</p>
-            <h1 class="hero__title">
-              <span data-reveal-hero>TERET</span>
-              <span data-reveal-hero>U DOBRE</span>
-              <span data-reveal-hero class="hero__title-accent">RUKE</span>
+        <div class="hero__content">
+          <div class="hero__inner">
+            <h1 class="hero__title" data-reveal>
+              Vozač kojeg zovu <em>kad je bitno.</em>
             </h1>
-            <p class="hero__sub" data-reveal-hero>
-              Prevoz robe kipom po cijeloj Bosni i Hercegovini.
+            <p class="hero__sub" data-reveal>
+              JPS Madžar je profesionalni vozač sa dugogodišnjim iskustvom na
+              domaćim relacijama. Od dogovora do isporuke — odgovorno,
+              direktno i na vrijeme.
             </p>
-            <a href="#kontakt" class="btn btn--accent" data-reveal-hero>Zatražite ponudu</a>
+            <div class="hero__actions" data-reveal>
+              <a class="btn btn--primary" href="tel:+38766122171">
+                Pozovi direktno
+                <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+              <a class="btn btn--ghost" href="#kontakt">
+                Pošalji poruku
+                <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+            <p class="hero__trust" data-reveal>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2 3 6v6c0 5 3.8 8.6 9 10 5.2-1.4 9-5 9-10V6l-9-4Z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              Relacije BiH · Direktan kontakt · Odgovoran pristup svakoj turi
+            </p>
           </div>
-
-          <a href="#usluge" class="hero__scroll-cue" aria-label="Pomjeri se na sadržaj">
-            <span class="hero__scroll-cue-line" aria-hidden="true"></span>
-            Skrolaj
-          </a>
-        </div>
-      </section>
-
-      <section id="usluge" class="usluge">
-        <div class="section-head" data-reveal="up">
-          <p class="section-head__kicker">Usluge</p>
-          <h2 class="section-head__title">Šta vozim, kad i kako</h2>
         </div>
 
-        <ul class="usluge__list">
-          <li class="usluge__item" data-reveal="up">
-            <span class="usluge__index">01</span>
-            <h3 class="usluge__title">Prevoz rasutog tereta</h3>
-            <p class="usluge__text">Pijesak, šljunak, zemlja, drobljeni kamen — utovar, prevoz, istovar bez čekanja.</p>
-          </li>
-          <li class="usluge__item" data-reveal="up">
-            <span class="usluge__index">02</span>
-            <h3 class="usluge__title">Iskop i odvoz materijala</h3>
-            <p class="usluge__text">Odvoz iskopanog materijala sa gradilišta, čisto i po dogovorenom terminu.</p>
-          </li>
-          <li class="usluge__item" data-reveal="up">
-            <span class="usluge__index">03</span>
-            <h3 class="usluge__title">Dostava građevinskog materijala</h3>
-            <p class="usluge__text">Direktno na gradilište, tačno gdje treba — bez gubljenja vremena na terminale.</p>
-          </li>
-          <li class="usluge__item" data-reveal="up">
-            <span class="usluge__index">04</span>
-            <h3 class="usluge__title">Fleksibilni termini</h3>
-            <p class="usluge__text">Direktan dogovor, bez posrednika. Zovete, kažete šta treba, dogovorimo se.</p>
-          </li>
-        </ul>
+        <a href="#o-meni" class="hero__scroll-cue">
+          <span class="hero__scroll-cue-line" aria-hidden="true"></span>
+          Skrolaj
+        </a>
       </section>
 
-      <section id="zasto" class="zasto">
-        <div class="section-head" data-reveal="up">
-          <p class="section-head__kicker">Zašto JPS Madžar</p>
-          <h2 class="section-head__title">Iskustvo koje se vidi na putu</h2>
-        </div>
-
-        <ul class="zasto__list">
-          <li class="zasto__item" data-reveal="up">
-            <span class="zasto__num">15+</span>
-            <p class="zasto__text">godina profesionalnog iskustva za volanom</p>
-          </li>
-          <li class="zasto__item" data-reveal="up">
-            <span class="zasto__num">100%</span>
-            <p class="zasto__text">poznavanje svih ruta u Bosni i Hercegovini</p>
-          </li>
-          <li class="zasto__item" data-reveal="up">
-            <span class="zasto__num">1:1</span>
-            <p class="zasto__text">jedan vozač, jedan dogovor — bez posrednika</p>
-          </li>
-          <li class="zasto__item" data-reveal="up">
-            <span class="zasto__num">∞</span>
-            <p class="zasto__text">pouzdanost koja se gradi godinama, ne reklamom</p>
-          </li>
-        </ul>
-      </section>
-
-      <section id="kontakt" class="kontakt">
-        <div class="kontakt__inner">
-          <div class="section-head section-head--center" data-reveal="up">
-            <p class="section-head__kicker">Kontakt</p>
-            <h2 class="section-head__title">Dogovorimo prevoz</h2>
-            <p class="kontakt__lead">Pišite ili zovite direktno — bez čekanja na ponudu od posrednika.</p>
+      <section id="o-meni" class="about">
+        <div class="container about__grid">
+          <div class="about__frame" data-reveal>
+            <div class="about__frame-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="1" />
+                <circle cx="12" cy="12" r="3.2" />
+                <path d="M8 5l1.2-2h5.6L16 5" />
+              </svg>
+              <span>Portret ili fotografija iz kabine — dodati kad bude dostupna</span>
+            </div>
           </div>
+          <div>
+            <div class="section-head">
+              <h2 class="sign"><span class="sign__title">Iza volana je čovjek,<br />ne call centar.</span></h2>
+            </div>
+            <div class="about__text measure">
+              <p>
+                U transportu nije dovoljno samo krenuti iz tačke A. Potrebni
+                su tačan dogovor, odgovornost prema robi i čovjek koji se
+                javlja kada ga pozovete.
+              </p>
+              <p>
+                <strong>JPS Madžar</strong> gradi saradnju na iskustvu,
+                otvorenoj komunikaciji i poslu završenom bez nepotrebnih
+                komplikacija — jedan vozač, jedan dogovor, bez posrednika.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <div class="kontakt__grid" data-reveal="up">
-            <a class="kontakt__card kontakt__card--phone" href="tel:+38761000000">
-              <span class="kontakt__card-label">Nazovite direktno</span>
-              <span class="kontakt__card-value">+387 61 000 000</span>
+      <section id="kako-radim" class="principles">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="sign"><span class="sign__title">Kako radim.</span></h2>
+          </div>
+        </div>
+        <div class="container principles__list" data-reveal-group>
+          <div class="principles__item">
+            <span class="principles__dot" aria-hidden="true"></span>
+            <h3 class="principles__title">Odgovornost prema turi</h3>
+            <p class="principles__text">
+              Svaki angažman se preuzima ozbiljno — od prvog dogovora do
+              završene isporuke.
+            </p>
+          </div>
+          <div class="principles__item">
+            <span class="principles__dot" aria-hidden="true"></span>
+            <h3 class="principles__title">Direktna komunikacija</h3>
+            <p class="principles__text">
+              Bez nepotrebnog prebacivanja odgovornosti. Klijent zna s kim
+              razgovara i šta se dešava.
+            </p>
+          </div>
+          <div class="principles__item">
+            <span class="principles__dot" aria-hidden="true"></span>
+            <h3 class="principles__title">Tačnost i pouzdanost</h3>
+            <p class="principles__text">
+              Rokovi, dogovor i stanje na putu komuniciraju se realno i na
+              vrijeme.
+            </p>
+          </div>
+          <div class="principles__item">
+            <span class="principles__dot" aria-hidden="true"></span>
+            <h3 class="principles__title">Iskustvo iz prakse</h3>
+            <p class="principles__text">
+              Poznavanje ceste i transporta koje ne dolazi iz prezentacije,
+              nego iz kilometara.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="relacije" class="relations">
+        <div class="container relations__grid">
+          <div>
+            <div class="section-head">
+              <h2 class="sign"><span class="sign__title">Na domaćim relacijama.</span></h2>
+            </div>
+            <p class="relations__text measure">
+              Za dostupnost, konkretnu relaciju i detalje angažmana, najbolje
+              je javiti se direktno.
+            </p>
+            <a class="btn btn--ghost" href="#kontakt" style="margin-top: 1.75rem">
+              Provjeri dostupnost
+              <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
             </a>
+          </div>
+          <div class="relations__map" data-reveal>
+            <svg class="route-line" data-draw viewBox="0 0 320 160" width="100%" role="img" aria-label="Shematska linija rute koja vodi do odredišta u Bosni i Hercegovini">
+              <path d="M10 140 C 90 20, 150 150, 230 40 S 300 20, 312 18" />
+              <circle cx="10" cy="140" r="4.5" />
+              <circle cx="312" cy="18" r="6" />
+            </svg>
+            <div class="relations__endpoint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg>
+              Bosna i Hercegovina
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="zasto" class="why">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="sign"><span class="sign__title">Zašto JPS Madžar.</span></h2>
+          </div>
+          <div class="why__grid">
+            <ul class="why__list" data-reveal-group>
+              <li class="why__item">Dogovor se poštuje.</li>
+              <li class="why__item">Problem se ne skriva — rješava se.</li>
+              <li class="why__item">Komunikacija je direktna.</li>
+              <li class="why__item">Roba i rok se shvataju ozbiljno.</li>
+              <li class="why__item">Iskustvo se vidi kada situacija nije idealna.</li>
+            </ul>
+            <blockquote class="quote" data-reveal>
+              <span class="quote__mark" aria-hidden="true">”</span>
+              <p class="quote__text">
+                Na cesti ne ide uvijek sve po planu. Profesionalnost se vidi
+                u tome kako reaguješ baš u takvim situacijama.
+              </p>
+              <cite class="quote__cite">Predloženi marketinški tekst — nije potvrđen kao doslovna izjava.</cite>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section id="realno-sa-ceste" class="social">
+        <div class="container social__grid">
+          <div class="social__frame" data-reveal>
+            <div class="social__frame-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="1" />
+                <circle cx="12" cy="12" r="3.2" />
+                <path d="M8 5l1.2-2h5.6L16 5" />
+              </svg>
+              <span>Fotografija sa Instagrama — dodati kad bude dostupna</span>
+            </div>
+          </div>
+          <div>
+            <div class="section-head">
+              <h2 class="sign"><span class="sign__title">Realno sa ceste.</span></h2>
+            </div>
+            <p class="social__text">
+              Iskustva iz kabine, situacije koje razumiju oni koji žive
+              transport i ponešto humora iz svakodnevice profesionalnog
+              vozača.
+            </p>
             <a
-              class="kontakt__card"
-              href="https://instagram.com/jpsmadzar"
+              class="social__link"
+              href="https://www.instagram.com/jps_madzar?igsi=MXBiNm1zemk2YXI5Ng=="
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span class="kontakt__card-label">Instagram</span>
-              <span class="kontakt__card-value">@jpsmadzar</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none" />
+              </svg>
+              Prati @jps_madzar
             </a>
-            <div class="kontakt__card kontakt__card--static">
-              <span class="kontakt__card-label">Lokacija</span>
-              <span class="kontakt__card-value">Bosna i Hercegovina</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="kontakt" class="cta-final">
+        <div class="container">
+          <div data-reveal>
+            <h2 class="cta-final__title sign"><span class="sign__title">Treba vam pouzdan čovjek za narednu turu?</span></h2>
+            <p class="cta-final__lead">
+              Pošaljite relaciju i osnovne informacije o angažmanu. Odgovor
+              ćete dobiti direktno, bez formulara sa deset nepotrebnih
+              koraka.
+            </p>
+            <div class="cta-final__actions">
+              <a class="btn btn--primary" href="tel:+38766122171">
+                Pozovi JPS Madžar
+                <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+              <a class="btn btn--ghost" href="https://wa.me/38766122171" target="_blank" rel="noopener noreferrer">
+                WhatsApp poruka
+              </a>
+              <a class="btn btn--ghost" href="viber://chat?number=%2B38766122171" target="_blank" rel="noopener noreferrer">
+                Viber poruka
+              </a>
             </div>
+          </div>
+
+          <div class="cta-final__contacts" data-reveal-group>
+            <a class="contact-line" href="tel:+38766122171">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6.6 10.8c1.5 3 3.9 5.4 6.9 6.9l2.3-2.3c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1.1.5 1.1 1.1V21c0 .6-.5 1.1-1.1 1.1C10.7 22.1 1.9 13.3 1.9 2.4 1.9 1.8 2.4 1.3 3 1.3h3.2c.6 0 1.1.5 1.1 1.1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/>
+              </svg>
+              <span>
+                <span class="contact-line__label">Telefon</span>
+                <span class="contact-line__value figures">+387 66 122 171</span>
+              </span>
+            </a>
+            <a class="contact-line" href="mailto:banemadzar81@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2.5" y="4.5" width="19" height="15" rx="1.5" />
+                <path d="m3 6 9 6.5L21 6" />
+              </svg>
+              <span>
+                <span class="contact-line__label">E-mail</span>
+                <span class="contact-line__value">banemadzar81@gmail.com</span>
+              </span>
+            </a>
+            <a class="contact-line" href="https://www.instagram.com/jps_madzar?igsi=MXBiNm1zemk2YXI5Ng==" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none" />
+              </svg>
+              <span>
+                <span class="contact-line__label">Instagram</span>
+                <span class="contact-line__value">@jps_madzar</span>
+              </span>
+            </a>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>JPS Madžar — prevoz robe kipom · Bosna i Hercegovina</p>
-      <p>&copy; <span id="year"></span> JPS Madžar</p>
+      <a href="#hero" class="site-footer__brand">
+        <span class="top-bar__shield" aria-hidden="true">JM</span>
+        JPS Madžar
+      </a>
+      <p class="site-footer__meta">
+        <span>Profesionalni teretni transport</span>
+        <span aria-hidden="true">·</span>
+        <span>Bosna i Hercegovina</span>
+        <span aria-hidden="true">·</span>
+        <a class="site-footer__social" href="https://www.instagram.com/jps_madzar?igsi=MXBiNm1zemk2YXI5Ng==" target="_blank" rel="noopener noreferrer">@jps_madzar</a>
+        <span aria-hidden="true">·</span>
+        <span>&copy; <span id="year"></span> JPS Madžar</span>
+      </p>
     </footer>
+
+    <nav class="mobile-bar" aria-label="Brzi kontakt">
+      <a class="mobile-bar__link mobile-bar__link--call" href="tel:+38766122171">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6.6 10.8c1.5 3 3.9 5.4 6.9 6.9l2.3-2.3c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1.1.5 1.1 1.1V21c0 .6-.5 1.1-1.1 1.1C10.7 22.1 1.9 13.3 1.9 2.4 1.9 1.8 2.4 1.3 3 1.3h3.2c.6 0 1.1.5 1.1 1.1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"/>
+        </svg>
+        Pozovi
+      </a>
+      <a class="mobile-bar__link mobile-bar__link--msg" href="https://wa.me/38766122171" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L4 20l1-4.3A8.5 8.5 0 1 1 21 11.5Z" />
+          <path d="M8.5 10.5c0 3 2.5 5.5 5.5 5.5" stroke-linecap="round" />
+        </svg>
+        Poruka
+      </a>
+    </nav>
 
     <script type="module" src="/src/main.js"></script>
   </body>

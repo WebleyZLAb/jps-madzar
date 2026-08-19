@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-19T00:00:00Z",
+  "title": "Design System: JPS Madžar",
+  "extensions": {
+    "colorMeta": {
+      "signal-amber": {
+        "role": "primary",
+        "displayName": "Signal Amber",
+        "canonical": "#e2842a",
+        "tonalRamp": ["#3a2408", "#5c380d", "#824e13", "#a8641a", "#c97620", "#e2842a", "#ecab6c", "#f6d4ae"]
+      },
+      "night-asphalt": {
+        "role": "neutral",
+        "displayName": "Night Asphalt",
+        "canonical": "#121417",
+        "tonalRamp": ["#050506", "#0b0c0e", "#121417", "#1b1e23", "#2a2e35", "#464b53", "#767c86", "#b4b8be"]
+      },
+      "asphalt-raised": {
+        "role": "neutral",
+        "displayName": "Asphalt Raised",
+        "canonical": "#1b1e23",
+        "tonalRamp": ["#050506", "#0b0c0e", "#121417", "#1b1e23", "#2a2e35", "#464b53", "#767c86", "#b4b8be"]
+      },
+      "asphalt-sunk": {
+        "role": "neutral",
+        "displayName": "Asphalt Sunk",
+        "canonical": "#0b0c0e",
+        "tonalRamp": ["#050506", "#0b0c0e", "#121417", "#1b1e23", "#2a2e35", "#464b53", "#767c86", "#b4b8be"]
+      },
+      "signage-ink": {
+        "role": "neutral",
+        "displayName": "Signage Ink",
+        "canonical": "#f5f2ea",
+        "tonalRamp": ["#3a3833", "#5c5952", "#827e74", "#a9a59a", "#c7c3b8", "#e2ded3", "#f5f2ea", "#fbfaf6"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero h1 only; the single largest text on the page." },
+      "headline": { "displayName": "Headline", "purpose": "Every section h2, always wrapped in the .sign corner-tick device." },
+      "title": { "displayName": "Title", "purpose": "Sub-headings within a component, e.g. each Kako radim waypoint." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy, measure-capped at 62-68ch." },
+      "label": { "displayName": "Label", "purpose": "Buttons, nav, contact-line labels, trust line, footer meta." }
+    },
+    "shadows": [
+      {
+        "name": "waypoint-punch-ring",
+        "value": "0 0 0 4px var(--color-bg)",
+        "purpose": "Background-colored ring that punches the amber waypoint dot out from the dashed route line behind it. Not a drop shadow; the system's only shadow-vocabulary entry."
+      }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default easing for all reveals, hovers, and route-line draws." },
+      { "name": "dur-fast", "value": "180ms", "purpose": "Hover/focus state transitions (buttons, links, top-bar call pill)." },
+      { "name": "dur-med", "value": "480ms", "purpose": "Scroll-reveal opacity + translateY(14px) rise, used via [data-reveal] and [data-reveal-group], staggered 70ms per sibling." },
+      { "name": "dur-slow", "value": "900ms", "purpose": "Route-line stroke-dashoffset draw-in on scroll reveal ([data-draw])." },
+      { "name": "reduced-motion-behavior", "value": "all transitions/transforms disabled, opacity forced to 1, stroke-dashoffset forced to 0", "purpose": "prefers-reduced-motion: reduce path, implemented both in CSS and as an early branch in main.js that immediately marks all reveal/draw targets is-visible." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "720px" },
+      { "name": "lg", "value": "860px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call-to-action, e.g. 'Pozovi direktno' / 'Pozovi JPS Madžar'.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"tel:+38766122171\">Pozovi direktno<svg class=\"ds-btn-arrow\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 0.6em; padding: 0.95em 1.5em; font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-size: 1.05rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.01em; border-radius: 3px; border: 1.5px solid transparent; min-height: 48px; transition: transform 180ms cubic-bezier(0.16,1,0.3,1), background 180ms cubic-bezier(0.16,1,0.3,1), border-color 180ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-arrow { width: 1em; height: 1em; transition: transform 180ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary { background: #e2842a; color: #1a1204; } .ds-btn-primary:hover { background: #ef9440; } .ds-btn-primary:hover .ds-btn-arrow { transform: translateX(3px); } .ds-btn-primary:active { transform: scale(0.98); } .ds-btn-primary:focus-visible { outline: 2px solid #e2842a; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action paired with a primary button, e.g. 'Pošalji poruku'.",
+      "html": "<a class=\"ds-btn ds-btn-ghost\" href=\"#kontakt\">Pošalji poruku<svg class=\"ds-btn-arrow\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 0.6em; padding: 0.95em 1.5em; font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-size: 1.05rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.01em; border-radius: 3px; min-height: 48px; transition: color 180ms cubic-bezier(0.16,1,0.3,1), border-color 180ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-arrow { width: 1em; height: 1em; transition: transform 180ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-ghost { background: transparent; color: #f5f2ea; border: 1.5px solid rgba(245,242,234,0.22); } .ds-btn-ghost:hover { border-color: #e2842a; color: #e2842a; } .ds-btn-ghost:hover .ds-btn-arrow { transform: translateX(3px); } .ds-btn-ghost:focus-visible { outline: 2px solid #e2842a; outline-offset: 3px; }"
+    },
+    {
+      "name": "Section Sign Heading",
+      "kind": "custom",
+      "refersTo": "sign-heading",
+      "description": "The h2 wrapper used at the top of every section: a corner-tick device replacing a kicker/eyebrow label.",
+      "html": "<h2 class=\"ds-sign\"><span class=\"ds-sign-title\">Kako radim.</span></h2>",
+      "css": ".ds-sign { display: inline-block; position: relative; padding: 0.2em 0; margin: 0; font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; line-height: 0.96; color: #f5f2ea; } .ds-sign::before { content: ''; position: absolute; left: -0.05em; top: -0.35em; width: 1.6em; height: 3px; background: #e2842a; } .ds-sign-title { font-size: clamp(2rem, 5.5vw, 3.4rem); }"
+    },
+    {
+      "name": "Photo Placeholder Slot",
+      "kind": "custom",
+      "refersTo": "photo-slot",
+      "description": "Labeled placeholder for a photo not yet supplied by the site owner (hero art aside; this pattern is for the framed in-body slots like 'O meni' and 'Realno sa ceste'). Never filled with stock or AI imagery.",
+      "html": "<div class=\"ds-photo-slot\"><svg class=\"ds-photo-slot-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"1\"/><circle cx=\"12\" cy=\"12\" r=\"3.2\"/><path d=\"M8 5l1.2-2h5.6L16 5\"/></svg><span>Portret ili fotografija iz kabine — dodati kad bude dostupna</span></div>",
+      "css": ".ds-photo-slot { position: relative; aspect-ratio: 4/5; border: 1px solid rgba(245,242,234,0.22); border-radius: 4px; background: #0b0c0e; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; padding: 2rem; text-align: center; color: #8b8f98; } .ds-photo-slot::after { content: ''; position: absolute; inset: 0; border: 1px solid #e2842a; opacity: 0.35; margin: 10px; pointer-events: none; } .ds-photo-slot-icon { width: 2.5rem; height: 2.5rem; color: rgba(245,242,234,0.22); } .ds-photo-slot span { font-size: 0.8rem; letter-spacing: 0.02em; max-width: 22ch; font-family: 'Public Sans', sans-serif; }"
+    },
+    {
+      "name": "Route Waypoint List Item",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "One item in the 'Kako radim' manifest list — a waypoint on a continuous dashed amber route line, the system's signature device in list form.",
+      "html": "<div class=\"ds-waypoint\"><span class=\"ds-waypoint-dot\"></span><h3 class=\"ds-waypoint-title\">Odgovornost prema turi</h3><p class=\"ds-waypoint-text\">Svaki angažman se preuzima ozbiljno — od prvog dogovora do završene isporuke.</p></div>",
+      "css": ".ds-waypoint { position: relative; padding: 1.75rem 0 1.75rem 3.2rem; border-top: 1px solid rgba(245,242,234,0.12); font-family: 'Public Sans', sans-serif; } .ds-waypoint-dot { position: absolute; left: calc(0.9rem - 5px); top: 2.1rem; width: 11px; height: 11px; border-radius: 50%; background: #e2842a; box-shadow: 0 0 0 4px #121417; } .ds-waypoint-title { margin: 0; font-family: 'Big Shoulders', 'Arial Narrow', sans-serif; font-size: 1.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: -0.005em; color: #f5f2ea; } .ds-waypoint-text { margin-top: 0.5rem; color: #a9adb6; max-width: 52ch; }"
+    },
+    {
+      "name": "Drawn Route Map",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "SVG route line with waypoint dots used in the 'Relacije' section; stroke draws in on scroll reveal via JS-measured path length. Second literal expression of the route-line signature device.",
+      "html": "<svg class=\"ds-route-line\" viewBox=\"0 0 320 160\" width=\"100%\" role=\"img\" aria-label=\"Shematska linija rute\"><path d=\"M10 140 C 90 20, 150 150, 230 40 S 300 20, 312 18\"/><circle cx=\"10\" cy=\"140\" r=\"4.5\"/><circle cx=\"312\" cy=\"18\" r=\"6\"/></svg>",
+      "css": ".ds-route-line { overflow: visible; } .ds-route-line path { fill: none; stroke: rgba(226,132,42,0.45); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 6 10; } .ds-route-line circle { fill: #e2842a; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Road Sign, Not the Billboard",
+    "overview": "The site reads the way a road sign reads: high contrast, one glance, no persuasion attempt. Trust is communicated by clarity and restraint, not by decoration — a night-asphalt ground, one committed amber signal color, condensed uppercase display type standing in for signage lettering, and a single recurring device (a route line with waypoint dots) that ties every section together as one continuous route from hero to final call-to-action. This is a direct rejection of the soft corporate-fleet dashboard look: no card grids, no glassmorphism, no gradient-as-decoration, no neon glow on the accent.\n\nThe build honors this thesis literally rather than referencing it: sections are joined edge-to-edge with hairline rules (not floating cards), the 'Kako radim' list is a vertical route with dashed line and waypoint dots rather than a feature grid, and the 'Relacije' section renders an actual drawn SVG route line as its illustration. Photo slots (hero, 'Iza volana', 'Realno sa ceste') are honest, labeled placeholders — bordered frames with a camera-style mark and a text note naming exactly what shot belongs there — because no real photography exists yet (confirmed in PRODUCT.md); nothing pretends to be a finished photograph.",
+    "keyCharacteristics": [
+      "Near-black asphalt ground with one matte-amber signal color, used in bands (rules, dots, CTAs, route strokes) rather than sprinkled as micro-accents",
+      "Big Shoulders (condensed, uppercase, display) paired with Public Sans (body) — a two-family system, no third face",
+      "Rectangular geometry throughout: 3–4px radii only, hairline dividers instead of shadows or cards",
+      "One recurring signature device — the route line / waypoint dot — used literally in both the process list and the relations map",
+      "Honest, labeled placeholder frames for every unavailable photo, never stock or AI-styled imagery"
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Amber is the only chromatic color in the system. It never appears as a secondary tint, a gradient stop, or a soft glow — only as a flat fill, a flat stroke, or flat text color, always at full or near-full saturation where it appears at all.", "section": "colors" },
+      { "name": "The Band, Not Sprinkle Rule", "body": "Amber shows up as a deliberate mark (a CTA fill, a rule, a dot, a stroke) rather than as decorative micro-accents scattered across a layout. If a screen has more than a small handful of amber marks, the design has drifted from this system.", "section": "colors" },
+      { "name": "The Uppercase-Display Rule", "body": "Every heading-level element renders in Big Shoulders, uppercase, at a line-height near 1. Body and label text never adopt the display face; the two families never mix within one text run.", "section": "typography" },
+      { "name": "The Flat Ground Rule", "body": "No component uses box-shadow for lift or depth. Separation between surfaces is done with a 1px hairline border and/or a background-tone step, never a shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep amber (#e2842a) as the only chromatic color in the system; every other color is a neutral asphalt or ink tone.",
+      "Do use the .sign corner-tick device on every section heading instead of a small label line above it.",
+      "Do separate sections with a hairline border and a background-tone step (sunk/base/raised), never a shadow or a rounded card boundary.",
+      "Do build any new photo slot as a bordered, labeled placeholder frame naming the exact shot needed, matching the existing photo-slot pattern, until real photography exists.",
+      "Do keep the route-line/waypoint-dot grammar consistent (dashed amber stroke, solid amber circle) anywhere it's reused; don't introduce a second illustration style for the same idea.",
+      "Do cap radius at 4px anywhere in the system; treat anything larger as off-system."
+    ],
+    "donts": [
+      "Don't add a kicker/eyebrow label above headings — the .sign corner-tick device is the system's answer to that pattern and replaces it everywhere.",
+      "Don't introduce card grids, glassmorphism, or gradient-as-decoration; the system is edge-to-edge banded sections joined by hairlines.",
+      "Don't add drop shadows for elevation or hover lift; depth comes from tone-stepping and hairlines only (see Elevation & Depth).",
+      "Don't let amber glow, blur, or gradient-fade — it stays a flat matte fill or stroke everywhere it appears.",
+      "Don't use a third font family or a display face for body copy; the system is exactly two families (Big Shoulders + Public Sans).",
+      "Don't substitute a stock photo, AI-generated image, or generic logistics-team imagery for an empty photo slot; use the labeled placeholder frame until the owner supplies a real photo."
+    ]
+  }
+}
