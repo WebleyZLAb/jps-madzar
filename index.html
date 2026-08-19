@@ -283,38 +283,33 @@
           </div>
           <div class="relations__map" data-reveal>
             <!--
-              Polazna tačka je stvarna lokacija (Rudi Čajaveca 8, 79000
-              Prijedor) korištena samo za tačnost mape — javno se i dalje
-              prikazuje samo "Bosna i Hercegovina", bez adrese na stranici.
-              Ruta Prijedor–Sarajevo je ilustrativna (primjer domaće
-              relacije), ne fiksna linija koju vozač isključivo vozi.
+              Prava mapa (Google Maps embed, centrirana na BiH) sa
+              autorskom simuliranom linijom rute preko nje (Prijedor →
+              Sarajevo, primjer domaće relacije — ilustrativna linija,
+              ne Google-om izračunata ruta, da bi se izbjegao Google-ov
+              info-panel iz directions embed-a). Stranica i dalje javno
+              prikazuje samo "Bosna i Hercegovina".
             -->
             <div class="relations__map-embed">
               <iframe
-                src="https://maps.google.com/maps?saddr=Rudi+%C4%8Cajaveca+8,+79000+Prijedor,+Bosna+i+Hercegovina&daddr=Sarajevo,+Bosna+i+Hercegovina&output=embed"
-                title="Mapa relacije Prijedor–Sarajevo, Bosna i Hercegovina"
+                src="https://maps.google.com/maps?q=Bosna+i+Hercegovina&z=8&output=embed"
+                title="Mapa Bosne i Hercegovine"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
+                tabindex="-1"
               ></iframe>
+              <svg class="relations__route" viewBox="0 0 400 300" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M88 90 C 150 130, 190 150, 230 190 S 300 230, 320 220" />
+                <circle cx="88" cy="90" r="6" />
+                <circle cx="320" cy="220" r="7" />
+              </svg>
             </div>
-            <div class="relations__endpoint-row">
-              <div class="relations__endpoint">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 22s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
-                  <circle cx="12" cy="10" r="2.5" />
-                </svg>
-                Bosna i Hercegovina
-              </div>
-              <!-- Neki ad-blockeri filtriraju Google Maps iframe embed-ove;
-                   ovaj link ostaje koristan i ako se to desi. -->
-              <a
-                class="relations__map-link"
-                href="https://www.google.com/maps/dir/?api=1&origin=Rudi+%C4%8Cajaveca+8,+79000+Prijedor,+Bosna+i+Hercegovina&destination=Sarajevo,+Bosna+i+Hercegovina"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Otvori u Google Maps
-              </a>
+            <div class="relations__endpoint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg>
+              Bosna i Hercegovina
             </div>
           </div>
         </div>
